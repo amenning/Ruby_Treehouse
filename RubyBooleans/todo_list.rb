@@ -8,10 +8,39 @@ class TodoList
 		@todo_items = []
 	end
 	
+	def add_item(name)
+		todo_items.push(TodoItem.new(name))
+	end
+	
+	def remove_item(name)
+		index = 0
+		found = false
+		todo_items.each do |todo_item|
+			if todo_item.name == name
+				found = true
+			end
+			if found
+				break
+			else
+				index += 1
+			end
+		end
+		if found
+			todo_items.delete_at(index)
+			return true
+		else
+			return false
+		end
+	end
+	
 end
 
 todo_list = TodoList.new("Groceries")
-todo_item = TodoItem.new("Milk")
+todo_list.add_item("Milk")
+todo_list.add_item("Eggs")
 
 puts todo_list.inspect
-puts todo_item.inspect
+
+if todo_list.remove_item("Eggs")
+	puts "Eggs were removed from the list."
+end
