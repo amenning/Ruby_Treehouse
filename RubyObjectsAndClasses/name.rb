@@ -10,6 +10,19 @@ class Name
 		@last_name = last_name
 	end
 	
+	def full_name
+		first_and_middle_name = @first_name + " " + @middle_name
+		first_and_middle_name + " " + @last_name
+	end
+	
+	def full_name_with_title
+		@title + " " + full_name()
+	end
+	
+	def to_s
+		full_name_with_title
+	end
+	
 	#attr_reader replaces all of these methods below
 	# def title
 		# @title #return keywork is optional
@@ -34,11 +47,14 @@ class Name
 end
 
 name = Name.new("Mr.", "Jason", "", "Seifer")
-puts name.title + " " +
-	 name.first_name + " " +
-	 name.middle_name + " " +
-	 name.last_name
+puts name.full_name_with_title
+
+nick = Name.new("Mr.", "Nick", "", "Pettit")
+puts nick.full_name_with_title
 	 
 puts "Title: #{name.title}"
 name.title = "Dr."
 puts "Title: #{name.title}"
+
+puts name
+puts name.inspect
