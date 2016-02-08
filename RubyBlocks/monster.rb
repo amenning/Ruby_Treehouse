@@ -16,6 +16,16 @@ class Monster
 		yield
 	end
 	
+	def print_scoreboard
+		puts "-"*40
+		puts "#{name} scoreboard"
+		puts "-"*40
+		puts "- Screams: #{actions[:screams]}"
+		puts "- Scares: #{actions[:scares]}"
+		puts "- Runs: #{actions[:run]}"
+		puts "- Hides: #{actions[:hide]}"
+	end
+	
 	def scream(&block)
 		actions[:screams] += 1
 		print "#{name} screams! "
@@ -37,8 +47,12 @@ class Monster
 	def hide(&block)
 		actions[:hide] += 1
 		print "#{name} hides! "
-		yield
+		yield self if block_given?
 	end	
+	
+	def inspect
+		puts "<#{name}, #{actions}>"
+	end
 	
 end
 
@@ -48,19 +62,20 @@ puts monster.actions
 monster.scream do
 	puts "BOO!"
 end
-puts monster.actions
+monster.print_scoreboard
 
 monster.scare do
 	puts "Go away!"
 end
-puts monster.actions
+monster.print_scoreboard
 
 monster.run do
 	puts "Going to get you!"
 end
-puts monster.actions
+monster.print_scoreboard
 
-monster.hide do
+monster.hide do |m|
 	puts "Running away and hiding!"
+	puts m.inspect
 end
-puts monster.actions
+monster.print_scoreboard
