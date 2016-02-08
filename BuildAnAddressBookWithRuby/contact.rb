@@ -93,19 +93,19 @@ class Contact
 	
 end
 
-jason = Contact.new
-jason.first_name = "Jason"
-jason.last_name = "Seifer"
-jason.add_phone_number("Home", "123-456-7890")
-jason.add_phone_number("Work", "456-789-0123")
-jason.add_address("Home", "123 Main St.", "", "Portlad", "OR", "12345")
-puts jason.to_s("full_name")
-puts jason.to_s("last_first")
-jason.print_phone_numbers
-jason.print_addresses
+# jason = Contact.new
+# jason.first_name = "Jason"
+# jason.last_name = "Seifer"
+# jason.add_phone_number("Home", "123-456-7890")
+# jason.add_phone_number("Work", "456-789-0123")
+# jason.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
+# puts jason.to_s("full_name")
+# puts jason.to_s("last_first")
+# jason.print_phone_numbers
+# jason.print_addresses
 
-nick = Contact.new
-nick.first_name = "Nick"
-nick.middle_name = "A"
-nick.last_name = "Pettit"
-puts nick.to_s("first_last")
+# nick = Contact.new
+# nick.first_name = "Nick"
+# nick.middle_name = "A"
+# nick.last_name = "Pettit"
+# puts nick.to_s("first_last")
