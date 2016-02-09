@@ -7,6 +7,25 @@ class AddressBook
 		@contacts = []
 	end
 	
+	def run
+		loop do
+			puts "Address Book"
+			puts "a: Add Contact"
+			puts "p: Print Address Book"
+			puts "e: Exit"
+			print "Enter you choice: "
+			input = gets.chomp.downcase
+			case input
+			when 'a'
+				add_contact
+			when 'p'
+				print_contact_list
+			when 'e'
+				break	
+			end
+		end
+	end
+	
 	def find_by_name(name)
 		results = []
 		search = name.downcase
@@ -44,6 +63,17 @@ class AddressBook
 		print_results("Address search results (#{search})", results)
 	end
 	
+	def add_contact
+		contact = Contact.new
+		print "First name: "
+		contact.first_name = gets.chomp
+		print "Middle name: "
+		contact.middle_name = gets.chomp
+		print "Last name: "
+		contact.last_name = gets.chomp
+		contacts.push(contact)
+	end
+	
 	def print_results(search, results)
 		puts search
 		results.each do |contact|
@@ -63,26 +93,27 @@ class AddressBook
 end
 
 address_book = AddressBook.new
+address_book.run
 
-jason = Contact.new
-jason.first_name = "Jason"
-jason.last_name = "Seifer"
-jason.add_phone_number("Home", "123-456-7890")
-jason.add_phone_number("Work", "456-789-0123")
-jason.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
+# jason = Contact.new
+# jason.first_name = "Jason"
+# jason.last_name = "Seifer"
+# jason.add_phone_number("Home", "123-456-7890")
+# jason.add_phone_number("Work", "456-789-0123")
+# jason.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
 
-nick = Contact.new
-nick.first_name = "Nick"
-nick.last_name = "Pettit"
-nick.add_phone_number("Home", "222-222-2222")
-nick.add_address("Home", "222 Two Lane", "", "Portland", "OR", "12345")
+# nick = Contact.new
+# nick.first_name = "Nick"
+# nick.last_name = "Pettit"
+# nick.add_phone_number("Home", "222-222-2222")
+# nick.add_address("Home", "222 Two Lane", "", "Portland", "OR", "12345")
 
-address_book.contacts.push(jason)
-address_book.contacts.push(nick)
-address_book.print_contact_list
+# address_book.contacts.push(jason)
+# address_book.contacts.push(nick)
+# address_book.print_contact_list
 
-address_book.find_by_name("e")
+# address_book.find_by_name("e")
 
-address_book.find_by_phone_number("2")
+# address_book.find_by_phone_number("2")
 
-address_book.find_by_address("two")
+# address_book.find_by_address("two")
