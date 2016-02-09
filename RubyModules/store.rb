@@ -1,5 +1,21 @@
 module Inventoryable
-	
+
+	def self.included(klass)
+		klass.extend(ClassMethods)
+	end
+
+	module ClassMethods
+		def create(attributes)
+			object = new(attributes)
+			instances.push(object)
+			return object
+		end
+		
+		def instances	
+			@instances ||= []
+		end
+	end
+
 	def stock_count
 		@stock_count ||= 0
 	end
@@ -39,8 +55,8 @@ class Accessory
 	end
 end
 
-shirt1 = Shirt.new(name: "MTF", size: "L")
-shirt2 = Shirt.new(name: "MTF", size: "M")
+shirt1 = Shirt.create(name: "MTF", size: "L")
+shirt2 = Shirt.create(name: "MTF", size: "M")
 
 shirt1.stock_count = 10
 
@@ -49,3 +65,5 @@ puts "Shirt 2 stock count: %s" % shirt2.stock_count
 
 puts "Shirt 1 in stock?: %s" % shirt1.in_stock?
 puts "Shirt 2 in stock?: %s" % shirt2.in_stock?
+
+puts Shirt.instances.inspect
