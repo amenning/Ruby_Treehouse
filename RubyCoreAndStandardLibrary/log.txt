@@ -1,0 +1,4 @@
+# Logfile created on 2016-02-09 21:47:28 -0500 by logger.rb/44203
+I, [2016-02-09T21:47:28.863935 #9672]  INFO -- : This is a test
+I, [2016-02-09T21:48:15.336593 #11788]  INFO -- : This is a test
+I, [2016-02-09T21:48:15.336593 #11788]  INFO -- : The name is Jason
