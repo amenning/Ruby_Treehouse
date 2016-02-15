@@ -21,9 +21,9 @@ module Odot
     # config.i18n.default_locale = :de
     
     # Account fo RSpec::Core::ExampleGroup#example deprecation
-    RSpec.configure do |c|
-      c.expose_current_running_example_as :example
-    end
+    #RSpec.configure do |c|
+    #  c.expose_current_running_example_as :example
+    #end
     
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
