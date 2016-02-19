@@ -14,4 +14,13 @@ class PasswordResetsController < ApplicationController
       render action: 'new'
     end
   end
+  
+  def edit
+    @user = User.find_by(password_reset_token: params[:id])
+    if @user
+      print @user.inspect
+    else
+      render file: '/public/404', status: :not_found
+    end
+  end
 end
