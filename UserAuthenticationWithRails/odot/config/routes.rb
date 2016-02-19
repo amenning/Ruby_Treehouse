@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   delete "/logout" => "user_sessions#destroy", as: :logout
   
   resources :users
-  get 'todo_items/index'
   resources :user_sessions, only: [:new, :create]
-  resources :password_resets, only: [:new, :create]
+  resources :password_resets, only: [:new, :create, :edit]
   
   resources :todo_lists do
     resources :todo_items do
