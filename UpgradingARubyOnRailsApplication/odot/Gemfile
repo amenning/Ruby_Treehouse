@@ -49,8 +49,8 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-email'
-  gem 'minitest'
-  gem 'shoulda-matchers', '~> 2.4.0'
+  #gem 'minitest'
+  gem 'shoulda-matchers', '~> 2.6.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
