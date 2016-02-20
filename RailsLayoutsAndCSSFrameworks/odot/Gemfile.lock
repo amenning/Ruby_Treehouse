@@ -70,6 +70,9 @@ GEM
     factory_girl_rails (4.6.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    foundation-rails (5.2.3.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -91,6 +94,8 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -193,8 +198,10 @@ DEPENDENCIES
   capybara-email
   coffee-rails (~> 4.1.0)
   factory_girl_rails (~> 4.0)
+  foundation-rails (~> 5.2.2)
   jbuilder (~> 2.0)
   jquery-rails
+  quiet_assets (~> 1.0.2)
   rails (= 4.2.5.1)
   rspec-activemodel-mocks
   rspec-rails

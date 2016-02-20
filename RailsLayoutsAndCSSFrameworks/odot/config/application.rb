@@ -23,5 +23,6 @@ module Odot
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/mailer_previews"
+    config.assets.precompile += %w( vendor/modernizer.js )
   end
 end
