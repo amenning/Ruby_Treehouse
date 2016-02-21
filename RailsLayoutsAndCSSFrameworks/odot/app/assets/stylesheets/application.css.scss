@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  *= require foundation_and_overrides
+ *= require_self 
+ *= require_tree .
  */
 
 div.alert {
@@ -77,5 +77,3 @@ div.nav ul li a:hover {
 	color: #eee;
 }
 
-@import "foundation_and_overrides";
-/* Add imports of custom sass/scss files here */
