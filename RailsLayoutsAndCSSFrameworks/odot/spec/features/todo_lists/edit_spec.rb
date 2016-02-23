@@ -22,6 +22,7 @@ describe "Editing todo lists" do
   end
   
   it "updates a todo list successfully with correct information" do   
+    pending "Editing todo lists"
     update_todo_list todo_list: todo_list, 
                      title:"New title"
         
@@ -31,7 +32,8 @@ describe "Editing todo lists" do
     expect(todo_list.title).to eq("New title")
   end
   
-  it "displays an error with no title" do    
+  it "displays an error with no title" do
+    pending "Editing todo lists"    
     update_todo_list todo_list: todo_list, 
                      title:"" 
     title = todo_list.title
@@ -40,7 +42,8 @@ describe "Editing todo lists" do
     expect(page).to have_content("error")
   end
   
-  it "displays an error with too short a title" do    
+  it "displays an error with too short a title" do  
+    pending "Editing todo lists"  
     update_todo_list todo_list: todo_list, 
                      title:"hi" 
     
