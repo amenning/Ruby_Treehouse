@@ -12,8 +12,10 @@
  *
  *= require foundation_and_overrides
  *= require_self 
- *= require_tree .
  */
+
+@import 'partials/todo_lists';
+@import 'partials/todo_items';
 
 div.alert {
 	border: 2px solid #aaa;
